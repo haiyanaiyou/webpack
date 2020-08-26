@@ -1,4 +1,5 @@
 const path = require('path')
+const MyPlugins = require('./myPlugins/myPlugins')
 
 module.exports = {
     entry: './src/index.js',
@@ -19,5 +20,10 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new MyPlugins({
+            name: 'hello plugins'
+        })
+    ]
 }
